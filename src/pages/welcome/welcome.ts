@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, MenuController, NavParams, Slides } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { SignupPage } from '../signup/signup';
 
 /**
  * Generated class for the WelcomePage page.
@@ -15,17 +14,37 @@ import { SignupPage } from '../signup/signup';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
+   showSkip = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	@ViewChild('slides') slides: Slides;
+
+  constructor(
+    public navCtrl: NavController,
+    public menu: MenuController, 
+    public navParams: NavParams) {
+      
   }
 
-  
-  login(){
-  this.navCtrl.push(LoginPage);
+  startApp() {
+    this.navCtrl.push(LoginPage);
   }
 
-  signup(){
-  this.navCtrl.push(SignupPage);
+  onSlideChangeStart(slider: Slides) {
+    this.showSkip = !slider.isEnd();
+  }
+
+	ionViewWillEnter() {
+		this.slides.update();
+	}
+
+  ionViewDidEnter() {
+    // the root left menu should be disabled on the tutorial page
+    this.menu.enable(false);
+  }
+
+  ionViewDidLeave() {
+    // enable the root left menu when leaving the tutorial page
+    this.menu.enable(true);
   }
 
 }

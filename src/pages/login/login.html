@@ -4,15 +4,34 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+   <div class="login-page">
+      <div class="logo center">
+        <img src="../assets/icon/logo.png" />
+      </div> 
+      <ion-list inset padding>
+        <ion-item class="field">
+          <ion-label class="label">
+            <ion-icon class="icon" name="person"></ion-icon>
+          </ion-label>
+          <ion-input type="text" placeholder="Username"></ion-input>
+        </ion-item>
+        <ion-item class="field">
+          <ion-label class="label">
+            <ion-icon class="icon" name="briefcase"></ion-icon>
+          </ion-label>
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <br />
+        <button ion-button color="danger" large block (click)="loginUser()">Login</button>
+        <div class="for_pass">
+            Forget Password <a (click)="forgetPassword()">Click here</a>
+        </div>
+      </ion-list>
+        <div class="for_signup">
+          Don't have account? <a (click)="signUp()">Sign Up</a>. 
+        </div>
+   </div>
 </ion-content>
