@@ -1,23 +1,44 @@
 page-login {
+    max-width: 500px;
+    min-height: 600px;
+    margin: 0px auto;
+    .logo {
+        padding: 0px 50px;
+    }
+    .focus-outline :focus {
+        outline: 0px !important;
+    }
+    .text-input {
+        border: 0px;
+        font-size: 130%;
+        line-height: 1.2;
+        outline: 0px;
+    }
     .login-page {
         position: relative;
         width: 100%;
         height: 100%;
-        background: url('../assets/images/menu-header.jpg') no-repeat rgb(255, 255, 255);
+        background: url('../assets/images/auth/login-screen.jpg') no-repeat rgb(255, 255, 255);
         background-size: cover !important;
         background-position: center center !important;
-        
         .field {
             background-color: transparent;
             border-bottom: 2px solid #f9af34 !important;
+            color: #f9af34;
             ::-webkit-input-placeholder { 
-                color: #f9af34;
+                //color: #f9af34;
+                color: #ddd;
             }
             .label {
-                font-size: 150%;
+                font-size: 180%;
                 .icon {
                     color: #ae3134;
                 }
+            }
+            .show_password {
+                position: absolute;
+                right: 0;
+                top: 10%;
             }
         }
     }
@@ -29,6 +50,7 @@ page-login {
     }
     a {
         color: #f9af34; 
+        cursor: pointer;
     }
     .for_signup {
         position: absolute;
@@ -36,5 +58,7 @@ page-login {
         left: 0;
         right: 0;
         height: 50px;
+        background-color: #f53d3d;
+        line-height: 30px;
     }
 }

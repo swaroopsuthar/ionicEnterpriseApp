@@ -22,12 +22,17 @@
           <ion-label class="label">
             <ion-icon class="icon" name="briefcase"></ion-icon>
           </ion-label>
-          <ion-input type="password" placeholder="Password"></ion-input>
+          <ion-input #input type="password" placeholder="Password"></ion-input>
+          <ion-label class="show_password">
+            <a (click)="showPassword(input)">
+              <ion-icon name="eye"></ion-icon>
+            </a>
+          </ion-label>
         </ion-item>
         <br />
         <button ion-button color="danger" large block (click)="loginUser()">Login</button>
         <div class="for_pass">
-            Forget Password <a (click)="forgetPassword()">Click here</a>
+            Forget Password <a (click)="forgetPassword()">Click here?</a>
         </div>
       </ion-list>
         <div class="for_signup">

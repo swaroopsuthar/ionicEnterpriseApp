@@ -21,13 +21,17 @@ export class LoginPage {
 
   ionViewDidLoad() {
   }
+  
+  showPassword(input: any): any {
+    input.type = input.type === 'password' ?  'text' : 'password';
+  }
 
   loginUser() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
 
   forgetPassword() {
-    this.navCtrl.push(SignupPage);
+    this.navCtrl.setRoot(SignupPage);
   }
 
   signUp() {
