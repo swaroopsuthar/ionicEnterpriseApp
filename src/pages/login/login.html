@@ -12,25 +12,37 @@
         <img src="../assets/icon/logo.png" />
       </div> 
       <ion-list inset padding>
-        <ion-item class="field">
-          <ion-label class="label">
-            <ion-icon class="icon" name="person"></ion-icon>
-          </ion-label>
-          <ion-input type="text" placeholder="Username"></ion-input>
-        </ion-item>
-        <ion-item class="field">
-          <ion-label class="label">
-            <ion-icon class="icon" name="briefcase"></ion-icon>
-          </ion-label>
-          <ion-input #input type="password" placeholder="Password"></ion-input>
-          <ion-label class="show_password">
-            <a (click)="showPassword(input)">
-              <ion-icon name="eye"></ion-icon>
-            </a>
-          </ion-label>
-        </ion-item>
-        <br />
-        <button ion-button color="danger" large block (click)="loginUser()">Login</button>
+        <form #loginForm="ngForm" novalidate id="loginFormId">
+            <ion-item class="field">
+              <ion-label class="label">
+                <ion-icon class="icon" name="person"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="login.email" type="email" name="email" 
+                  #email="ngModel" spellcheck="false" 
+                  placeholder="Email" required></ion-input>
+            </ion-item>
+            <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+              Email is required
+            </p>
+            <ion-item class="field">
+              <ion-label class="label">
+                <ion-icon class="icon" name="briefcase"></ion-icon>
+              </ion-label>
+              <ion-input [(ngModel)]="login.password" name="password" 
+                #password="ngModel" type="password" 
+                placeholder="Password" required></ion-input>
+              <ion-label class="show_password">
+                <a (click)="showPassword(input)">
+                  <ion-icon name="eye"></ion-icon>
+                </a>
+              </ion-label>
+            </ion-item>
+            <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+              Password is required
+            </p>
+            <br />
+            <button ion-button color="danger" large block (click)="onLogin(loginForm)">Login</button>
+        </form>
         <div class="for_pass">
             Forget Password <a (click)="forgetPassword()">Click here?</a>
         </div>
