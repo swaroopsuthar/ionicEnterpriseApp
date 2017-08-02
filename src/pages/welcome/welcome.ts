@@ -9,11 +9,21 @@ import { LoginPage } from '../login/login';
  * on Ionic pages and navigation.
  */
 
+export interface Slide {
+  title: string;
+  icon: string;
+  color: string;
+  class: string;
+  description: string;
+  image: string;
+}
+
 @Component({
   selector: 'page-welcome',
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
+  slideData: Slide[];
    showSkip = true;
 
 	@ViewChild('slides') slides: Slides;
@@ -22,7 +32,32 @@ export class WelcomePage {
     public navCtrl: NavController,
     public menu: MenuController, 
     public navParams: NavParams) {
-      
+      this.slideData = [
+        {
+          title: '<strong>ionicEnterpriseApp</strong>',
+          description: 'This is my first repo.',
+          icon: 'appstore',
+          color: 'green',
+          class: 'slide-title app-title',
+          image: '',
+        },
+        {
+          title: 'What is ionicEnterpriseApp?',
+          description: '<b>ionicEnterpriseApp</b> is an open source and much much more!',
+          icon: 'appstore',
+          color: 'green',
+          class: 'slide-title',
+          image: '',
+        },
+        {
+          title: ' Why Should I Use it?',
+          description: 'This is starter-kit.',
+          icon: 'appstore',
+          color: 'green',
+          class: 'slide-title',
+          image: '',
+        }
+      ];
   }
 
   startApp() {

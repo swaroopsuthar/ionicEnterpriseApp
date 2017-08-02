@@ -1,15 +1,14 @@
 page-login {
-    max-width: 500px;
-    margin: 0px auto;
     .logo {
-        padding: 0px 50px;
+        padding-top: 10%;
+        text-align: center;
     }
     .focus-outline :focus {
         outline: 0px !important;
     }
     .text-input {
         border: 0px;
-        font-size: 130%;
+        font-size: 120%;
         line-height: 1.2;
         outline: 0px;
     }
@@ -17,9 +16,10 @@ page-login {
         position: relative;
         width: 100%;
         height: 100%;
-        background: url('../assets/images/auth/login-screen.jpg') no-repeat rgb(255, 255, 255);
-        background-size: cover !important;
-        background-position: center center !important;
+        background-color: rgb(101, 101, 101);
+        //background: url('../assets/images/app/login-screen-1.jpg') no-repeat rgb(255, 255, 255);
+        //background-size: cover !important;
+        //background-position: center center !important;
         .field {
             background-color: transparent;
             border-bottom: 2px solid #f9af34 !important;
@@ -29,7 +29,7 @@ page-login {
                 color: #ddd;
             }
             .label {
-                font-size: 180%;
+                font-size: 140%;
                 .icon {
                     color: #ae3134;
                 }
