@@ -1,6 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>SignUp</ion-title>
+  </ion-navbar>
+</ion-header>
 <ion-content>
    <div class="login-page">
-      <ion-list inset padding>
+      <ion-list padding>
         <form #signupForm="ngForm" novalidate id="signupFormId">
             <ion-item class="field">
               <ion-label class="label">
@@ -44,7 +49,7 @@
             <button type="submit" ion-button color="danger" large block (click)="onSignup(signupForm)">Sign Up</button>
         </form>
         <div class="for_pass">
-            Already user account, <a (click)="forgetPassword()">Click here?</a>
+            Already user account <a (click)="loginUser()">Login User.</a>
         </div>
       </ion-list>
    </div>

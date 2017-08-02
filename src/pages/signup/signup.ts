@@ -4,6 +4,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 // Services
 import { AuthService } from '../../providers/auth-service/auth-service';
+import { LoginPage } from "../login/login";
 
 
 @Component({
@@ -67,6 +68,11 @@ export class SignupPage {
       buttons: ['Ok']
     });
     alert.present();
+  }
+
+  
+  loginUser() {
+    this.navCtrl.push(LoginPage);
   }
 
 }
